@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+
+        <record id="customer_details" model="website.page">
+            <field name="name">create customer page</field>
+            <field name="type">qweb</field>
+            <field name="url">/customer-details</field>
+            <field name="is_published">True</field>
+            <field name="key">invoice_due.customer_details</field>
+            <field name="arch" type="xml">
+                <t name="Thanks" t-name="invoice_due.customer_details">
+                    <t t-call="website.layout">
+                        <div id="wrap">
+                            <div class="oe_structure">
+                                <div class="container">
+                                    <form role="form" method="post" action="/create/customer">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <div class="form-group">
+                                            <label for="name" class="control-label">First Name:</label>
+                                            <input type="text" name="name" t-att-value="name" id="name"
+                                                   class="form-control" required="required" placeholder="e.g: HARI"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email" class="control-label">Email:</label>
+                                            <input type="text" name="email" t-att-value="email" id="email"
+                                                   class="form-control" required="required"/>
+                                        </div>
+                                        <div class="oe_login_buttons">
+                                            <button type="submit"
+                                                    class="btn btn-primary pull-left">create
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+
+        <record id="menu_customer_form" model="website.menu">
+            <field name="name">Create Customer</field>
+            <field name="url">/customer-details</field>
+            <field name="page_id" ref="invoice_due.customer_details"/>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">55</field>
+        </record>
+
+
+        <record id="customer_thanks" model="website.page">
+            <field name="name">Thanks</field>
+            <field name="type">qweb</field>
+            <field name="url">/create/customer_thanks</field>
+            <field name="key">invoice_due.customer_thanks</field>
+            <field name="arch" type="xml">
+                <t name="Thanks" t-name="invoice_due.customer_thanks">
+                    <t t-call="website.layout">
+                        <div id="wrap">
+                            <div class="container">
+                                <h1>Thanks!</h1>
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="alert alert-success" role="status">
+                                            Your message has been sent successfully.
+                                        </div>
+                                        <p>
+                                            We will get back to you shortly.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

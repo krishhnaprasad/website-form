@@ -1,0 +1,25 @@
+<!-- my_module/views/wizard_report.xml -->
+
+<odoo>
+    <record id="view_wizard_report_form" model="ir.ui.view">
+        <field name="name">wizard_report.form</field>
+        <field name="model">wizard_report</field>
+        <field name="arch" type="xml">
+            <form string="Wizard Report">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+                        <field name="gender"/>
+                        <field name="adhar_number"/>
+                    </group>
+                    <footer>
+                        <button name="action_print_excel" string="Print Excel" type="object" class="oe_highlight"/>
+                        <button name="action_print_pdf" string="Print PDF" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
