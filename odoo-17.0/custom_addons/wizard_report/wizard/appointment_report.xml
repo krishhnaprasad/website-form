@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="appointment_wizard_form_view">
+            <field name="name">Appointment Wizard</field>
+            <field name="model">appointment.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Appointment Entry">
+                    <sheet>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                        </group>
+                        <footer>
+                            <button name="print_excel_report" string="Print Excel" type="object" class="btn-secondary"/>
+                            <button name="print_pdf_report" string="Print PDF" type="object" class="btn-secondary"/>
+                            <button name="save_data" string="Save" type="object" class="btn-secondary"/>
+                            <button string="Cancel" special="cancel" class="btn-secondary"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="appointment_report_wiz" model="ir.actions.act_window">
+            <field name="name">Appointment Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">appointment.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="appointment_wizard_form_view"/>
+            <field name="target">new</field>
+        </record>
+
+
+    </data>
+</odoo>

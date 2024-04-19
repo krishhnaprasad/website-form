@@ -1,18 +1,14 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
-    'name': 'report wizard',
+    'name': 'Trainee Task Manager',
     'version': '17.0.0.0',
     'licence': 'LGPL-3',
     'author': "krishna prasad",
-    'depends': ['base', 'report_xlsx'],
+    'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
-        'views/menu.xml',
-        'wizard/appointment_report.xml',
-        'report/appointmen_xls.xml',
-        'report/appointment_pdf.xml',
-        'report/pdf_report_action.xml',
+        'views/trainee_task.xml',
     ],
 
     'installable': True,

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--        form view-->
+        <record id="view_trainee_task_form" model="ir.ui.view">
+            <field name="name">trainee_task.form</field>
+            <field name="model">trainee.task.management</field>
+            <field name="arch" type="xml">
+                <form string="Trainee form">
+                    <header>
+                        <button name="marked_as_done" type="object" string="Done" class="oe_highlight"/>
+                        <field name="task_difficulty" widget="statusbar"/>
+                        <button string="Comment" class="oe_highlight" name="button_comment" type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="task_name"/>
+                                <field name="task_description"/>
+                                <field name="task_duration" widget="float_time"/>
+                                <field name="task_difficulty"/>
+                                <field name="task_completed"/>
+                                <field name="total_duration" widget="float_time"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--        tree-->
+
+        <record model="ir.ui.view" id="view_trainee_task_tree">
+            <field name="name">trainee task List</field>
+            <field name="model">trainee.task.management</field>
+            <field name="arch" type="xml">
+                <tree string="tag">
+                    <field name="task_name"/>
+                    <field name="task_description"/>
+                    <field name="task_duration" widget="float_time"/>
+                    <field name="task_difficulty"/>
+                    <field name="task_completed"/>
+                    <field name="total_duration" widget="float_time"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--        action for school management menu-->
+
+        <record id="action_trainee_task" model="ir.actions.act_window">
+            <field name="name">trainee task Details</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">trainee.task.management</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new record!
+                </p>
+            </field>
+        </record>
+        <!--        this area to show on module's left side , it connect with action id to done this-->
+
+        <menuitem id="trainee_task_management_root" name="Trainee Task"
+        />
+
+
+        <menuitem id="menu_trainee_task_custom"
+                  name="Task"
+                  parent="trainee_task_management_root"
+                  action="action_trainee_task"
+                  sequence="1"
+        />
+    </data>
+</odoo>

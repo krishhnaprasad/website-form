@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="action_report_pdf_data_wizard">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="row">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:left;">
+                                        <strong>Name</strong>
+                                    </th>
+                                    <th style="text-align:left;">
+                                        <strong>Symptoms</strong>
+                                    </th>
+                                    <th style="text-align:left;">
+                                        <strong>Fees</strong>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               <tr>
+                                   <td><t t-esc="form_data['patient_id']"/></td>
+                                   <td><t t-esc="form_data['date_from']"/></td>
+                                   <td><t t-esc="form_data['date_to']"/></td>
+                               </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
+
+
