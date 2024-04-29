@@ -21,11 +21,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                               <tr>
-                                   <td><t t-esc="form_data['patient_id']"/></td>
-                                   <td><t t-esc="form_data['date_from']"/></td>
-                                   <td><t t-esc="form_data['date_to']"/></td>
-                               </tr>
+                                <tr>
+                                    <td>
+                                        <t t-esc="form_data['patient_id']"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="form_data['date_from']"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="form_data['date_to']"/>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

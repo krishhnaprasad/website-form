@@ -1,0 +1,150 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<odoo>-->
+<!--    <template id="report_invoice">-->
+<!--        <t t-xml:id="self">-->
+<!--            <div class="page">-->
+<!--                <div class="header">-->
+<!--                    <div class="logo">Bake Al Arab [Company Logo Here]</div>-->
+<!--                    <div class="company_info">-->
+<!--                        <h1>Bake Al Arab</h1>-->
+<!--                        <p>[Company Address Here]</p>-->
+<!--                        <p>TRN: [Tax Registration Number Here]</p>-->
+<!--                        <p>Phone: [Phone Number Here]</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="invoice_details">-->
+<!--                    <h1>TAX INVOICE</h2>-->
+<!--                    <p>INV No.:-->
+<!--                        <t t-esc="doc.inv_number"/>-->
+<!--                    </p>-->
+<!--                    <p>Invoice Date:-->
+<!--                        <t t-esc="doc.invoice_date.strftime('%d/%m/%Y')"/>-->
+<!--                    </p>-->
+<!--                    <p>Due Date:-->
+<!--                        <t t-esc="doc.due_date.strftime('%d/%m/%Y')"/>-->
+<!--                    </p>-->
+<!--                    <p>Delivery Date:-->
+<!--                        <t t-esc="doc.delivery_date.strftime('%d/%m/%Y %H:%M')"/>-->
+<!--                    </p>-->
+<!--                    <p>Salesperson:-->
+<!--                        <t t-esc="doc.salesperson"/>-->
+<!--                    </p>-->
+<!--                    <table class="customer_details">-->
+<!--                        <tr>-->
+<!--                            <td>Name of Customer:</td>-->
+<!--                            <td>-->
+<!--                                <t t-esc="doc.partner_name"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>Mobile:</td>-->
+<!--                            <td>-->
+<!--                                <t t-esc="doc.partner_mobile"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>Contact Name:</td>-->
+<!--                            <td>-->
+<!--                                <t t-esc="doc.contact_name"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>Villa/Flat:</td>-->
+<!--                            <td>-->
+<!--                                <t t-esc="doc.partner_street2"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>Street:</td>-->
+<!--                            <td>-->
+<!--                                <t t-esc="doc.partner_street"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>Area:</td>-->
+<!--                            <td>-->
+<!--                                <t t-esc="doc.partner_state"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>Emirates:</td>-->
+<!--                            <td>-->
+<!--                                <t t-esc="doc.partner_country.name"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                    <table class="invoice_items">-->
+<!--                        <thead>-->
+<!--                            <tr>-->
+<!--                                <th>Seq</th>-->
+<!--                                <th>Description</th>-->
+<!--                                <th>Quantity</th>-->
+<!--                                <th>Unit Price</th>-->
+<!--                                <th>Vat</th>-->
+<!--                                <th>Total</th>-->
+<!--                            </tr>-->
+<!--                        </thead>-->
+<!--                        <tbody>-->
+<!--                            <tr t-foreach="doc.invoice_line_ids" t-as="line">-->
+<!--                                <td>-->
+<!--                                    <t t-esc="line.sequence"/>-->
+<!--                                </td>-->
+<!--                                <td>-->
+<!--                                    <t t-esc="line.name"/>-->
+<!--                                </td>-->
+<!--                                <td>-->
+<!--                                    <t t-esc="line.quantity"/>-->
+<!--                                </td>-->
+<!--                                <td>-->
+<!--                                    <t t-esc="line.price_unit"/>-->
+<!--                                </td>-->
+<!--                                <td>-->
+<!--                                    <t t-esc="line.tax_id.amount"/>-->
+<!--                                </td>-->
+<!--                                <td>-->
+<!--                                    <t t-esc="line.price_subtotal"/>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+<!--                    <table class="summary_table">-->
+<!--                        <tr>-->
+<!--                            <td>Total Before Vat</td>-->
+<!--                            <td>-->
+<!--                                <t t-esc="doc.amount_untaxed"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>Vat Amount</td>-->
+<!--                            <td>-->
+<!--                                <t t-esc="doc.amount_tax"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>Delivery Charge</td>-->
+<!--                            <td>-->
+<!--                                <t t-esc="doc.delivery_charge"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>Total</td>-->
+<!--                            <td>-->
+<!--                                <t t-esc="doc.amount_total"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                    <p>**Immediate Payment**</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </t>-->
+<!--        <div class="footer">-->
+<!--            <div class="logo">Bake Al Arab locations</div>-->
+<!--            <div class="company_info">-->
+<!--                <h1>Bake Al Arab</h1>-->
+<!--                <p>[Company Address Here]</p>-->
+<!--                <p>TRN: [Tax Registration Number Here]</p>-->
+<!--                <p>Phone: [Phone Number Here]</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </template>-->
+<!--</odoo>-->

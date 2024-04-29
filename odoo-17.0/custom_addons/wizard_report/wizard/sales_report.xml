@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sales_wizard_form_view">
+            <field name="name">Appointment Wizard</field>
+            <field name="model">sales.person.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Data Entry">
+                    <sheet>
+                        <group>
+                            <field name="sales_person"/>
+                            <field name="date_from"/>
+                            <field name="to_date"/>
+                        </group>
+                        <footer>
+                            <button name="print_sales_pdf" string="Print PDF" type="object" class="btn-secondary"/>
+                            <button string="Cancel" special="cancel" class="btn-secondary"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sales_pdf_report_wiz" model="ir.actions.act_window">
+            <field name="name">Sales Report Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sales.person.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="sales_wizard_form_view"/>
+            <field name="target">new</field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,75 @@
+{
+    'name': 'Sidmec Theme',
+    'depends': ['mail', 'web', 'base_setup', 'web_editor', ],
+    'auto_install': ['web'],
+    'data': [
+        'views/webclient_templates.xml',
+        'templates/web_layout.xml',
+        'templates/webclient.xml',
+        'views/res_users.xml',
+        'views/res_config_settings.xml',
+    ],
+    'assets': {
+        'web._assets_primary_variables': [
+            ('prepend', 'web_enterprise/static/src/scss/colors.scss'),
+            ('before','web_enterprise/static/src/scss/colors.scss','web_enterprise/static/src/scss/colors_light_picker.scss'),
+            ('before','web_enterprise/static/src/scss/colors.scss','web_enterprise/static/src/scss/colors_light.scss'),
+            ('after','web/static/src/scss/primary_variables.scss','web_enterprise/static/src/scss/variables.scss'),
+            ('after','web/static/src/scss/primary_variables.scss','web_enterprise/static/src/scss/variables_chatter.scss'),
+            ('after', 'web/static/src/scss/primary_variables.scss', 'web_enterprise/static/src/**/*.variables.scss'),
+            ('before', 'web/static/src/scss/primary_variables.scss','web_enterprise/static/src/scss/primary_variables.scss'),
+        ],
+        'web._assets_secondary_variables': [
+            ('before', 'web/static/src/scss/secondary_variables.scss','web_enterprise/static/src/scss/secondary_variables.scss'),],
+        'web._assets_backend_helpers': [
+            ('before', 'web/static/src/scss/bootstrap_overridden.scss', 'web_enterprise/static/src/scss/bootstrap_overridden.scss'),],
+        'web.assets_frontend': ['web_enterprise/static/src/webclient/home_menu/home_menu_background.scss','web_enterprise/static/src/webclient/navbar/navbar.scss',],
+        'web.assets_backend': [
+            ('after','web/static/src/core/dialog/dialog.js','/web_enterprise/static/src/core/dialog/dialog.js',),
+            ('after','web/static/src/core/dialog/dialog.scss', '/web_enterprise/static/src/core/dialog/dialog.scss',),
+            ('after','web/static/src/core/dialog/dialog.xml','/web_enterprise/static/src/core/dialog/dialog.xml',),
+            ('after','mail/static/src/views/web/form/form_compiler.js','web_enterprise/static/src/views/form/form_compiler.js'),
+            'web_enterprise/static/src/core/**/*.xml',
+            'web_enterprise/static/src/core/**/*.scss',
+            'web_enterprise/static/src/webclient/**/*.xml',
+            'web_enterprise/static/src/webclient/**/*.js',
+            'web_enterprise/static/src/views/**/*.scss',
+            'web_enterprise/static/src/webclient/**/*.scss',
+            'web_enterprise/static/src/views/**/*.scss',
+            'web_enterprise/static/src/core/**/*',
+            'web_enterprise/static/src/views/**/*.js',
+            'web_enterprise/static/src/views/**/*.xml',
+            ('remove', 'web_enterprise/static/src/**/*.dark.scss'),
+        ],
+        'web.assets_web': [
+            ('replace', 'web/static/src/main.js', 'web_enterprise/static/src/main.js'),
+        ],
+        "web.dark_mode_variables": [
+            ('before', 'web_enterprise/static/src/scss/primary_variables.scss','web_enterprise/static/src/scss/primary_variables.dark.scss'),
+            ('before', 'web_enterprise/static/src/**/*.variables.scss', 'web_enterprise/static/src/**/*.variables.dark.scss'),
+            ('before', 'web_enterprise/static/src/scss/secondary_variables.scss','web_enterprise/static/src/scss/secondary_variables.dark.scss'),
+        ],
+        "web.assets_web_dark": [
+            ('after','web_enterprise/static/src/scss/colors.scss','web_enterprise/static/src/scss/colors_dark_picker.scss'),
+            ('after','web_enterprise/static/src/scss/colors.scss','web_enterprise/static/src/scss/colors_dark.scss'),
+            'web_enterprise/static/src/**/*.dark.scss',
+            ('include', 'web.dark_mode_variables'),
+            ('before', 'web_enterprise/static/src/scss/bootstrap_overridden.scss', 'web_enterprise/static/src/scss/bootstrap_overridden.dark.scss'),
+            ('after', 'web/static/lib/bootstrap/scss/_functions.scss','web_enterprise/static/src/scss/bs_functions_overridden.dark.scss'),
+            'web_enterprise/static/src/**/*.dark.scss',
+        ],
+        'web.tests_assets': [
+            'web_enterprise/static/tests/*.js',
+        ],
+        'web.qunit_suite_tests': [
+            'web_enterprise/static/tests/views/**/*.js',
+            'web_enterprise/static/tests/webclient/**/*.js',
+            ('remove', 'web_enterprise/static/tests/webclient/action_manager_mobile_tests.js'),
+        ],
+        'web.qunit_mobile_suite_tests': [
+            'web_enterprise/static/tests/views/disable_patch.js',
+            'web_enterprise/static/tests/mobile/**/*.js',
+            'web_enterprise/static/tests/webclient/action_manager_mobile_tests.js',
+        ],
+    },
+}

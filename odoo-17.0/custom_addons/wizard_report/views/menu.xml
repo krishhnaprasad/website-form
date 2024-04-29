@@ -50,6 +50,11 @@
                   name="appointment"
                   parent="appointment_wizard_action"
                   action="appointment_report_wiz"/>
+
+        <menuitem id="sales_pdf_report_wiza"
+                  name="sales report"
+                  parent="appointment_wizard_action"
+                  action="sales_pdf_report_wiz"/>
     </data>
 </odoo>
 

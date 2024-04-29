@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="sales_pdf_template_action">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="row">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:left;">
+                                        <strong>Name</strong>
+                                    </th>
+                                    <th style="text-align:left;">
+                                        <strong>Date From</strong>
+                                    </th>
+                                    <th style="text-align:left;">
+                                        <strong>Date To</strong>
+                                    </th>
+                                    <th style="text-align:left;">
+                                        <strong>Total Count</strong>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               <tr>
+                                   <td><t t-esc="form_data['sales_person']"/></td>
+                                   <td><t t-esc="form_data['date_from']"/></td>
+                                   <td><t t-esc="form_data['to_date']"/></td>
+                                   <td><t t-esc="form_data['total_count']"/></td>
+                               </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
+
+

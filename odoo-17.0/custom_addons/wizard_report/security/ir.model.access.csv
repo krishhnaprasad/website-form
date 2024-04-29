@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_appointment_report_wizard,access.appointment.report.wizard,model_appointment_report_wizard,base.group_user,1,1,1,1
+access_sales_person_wizard,access.sales.person.wizard,model_sales_person_wizard,base.group_user,1,1,1,1
 access_report_wizard,access.report.wizard,model_report_wizard,base.group_user,1,1,1,1
+access_sales_report,access.sales.report,model_sales_report,base.group_user,1,1,1,1

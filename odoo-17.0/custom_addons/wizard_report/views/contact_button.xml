@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_approve_button_form" model="ir.ui.view">
+        <field name="name">approve.button.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet" position="before">
+                <header>
+                    <!-- Show the Approve button -->
+                    <button name="approved_function" type="object" string="Approve" class="oe_highlight"/>
+                    <field name="state" widget="statusbar"/>
+                    <field name="approve" invisible="1"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+</odoo>

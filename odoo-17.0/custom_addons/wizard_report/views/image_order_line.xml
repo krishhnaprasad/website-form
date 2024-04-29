@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_product_image" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="before">
+                <field name="image_add" widget="image" class="oe_avatar"
+                       invisible="image_add == False"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="image_adding_settings_inherit_view" model="ir.ui.view">
+        <field name="name">image.adding.settings.inherit.view</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='catalog_setting_container']" position="inside">
+                <div class="col-12 col-lg-6 o_setting_box" id="image_show">
+                    <div class="o_setting_left_pane">
+                        <field name="image_show"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="image_show" string="Product Image"/>
+                        <div class="text-muted mb16">Enable to show image on sale order line</div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

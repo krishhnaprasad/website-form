@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="sale_order_line_inherit_image" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//table//tr/th[1]" position="after">
+                <t t-if="request.env['ir.config_parameter'].sudo().get_param('wizard_report.image_show')">
+                    <th>
+                        Product Image
+                    </th>
+                </t>
+            </xpath>
+            <xpath expr="//t[@t-foreach='lines_to_report']//td[@name='td_name']" position="replace">
+                <td name="td_name">
+                    <span style="display:block;width:200px;word-wrap:break-word;" t-esc="line.name"/>
+                </td>
+                <t t-if="request.env['ir.config_parameter'].sudo().get_param('wizard_report.image_show')">
+                    <td style="height:20px !important;width:20px !important;">
+                        <span t-field="line.image_add" t-options='{"widget": "image"}'/>
+                    </td>
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>
